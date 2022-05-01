@@ -67,14 +67,14 @@ border-radius: 0px 0px 0px 20px;
 
 </html>
 <script>
+let buyerData = []
 let storeData =[]
 fetch("./store.json")
       .then((res) => res.json())
       .then((data) => {
         storeData = data;
-  storeData.map((val) => {
-                let newVal = { ...val }
-                newVal.quantity = 1;
+  storeData.map((val, index) => {
+               
 
                 document.getElementById('displayOnScreen').innerHTML +=
                     `
@@ -82,11 +82,22 @@ fetch("./store.json")
                  <h3> ${val.title}</h3>
                  <div style= " width: 100% ;"> <img src= ${val.image}  />  </div>   
                 <h5> <span> Price: </span>  ${val.price} $</h5>
-                <button onclick=" class="butt" addtocart( ${newVal}) "> Add To Cart </button>
+                <button onclick="addToCart(${index})" class="butt"> Add To Cart </button>
             </div >
                 `
             })
         console.log(storeData);
       });
+
+function addToCart(index) {
+  let title =   storeData[index].title
+  let price =   storeData[index].price
+  let image =   storeData[index].image
+  let rating =   storeData[index].rating.rate
+let objData ={quantity:1, title, price, image, rating}
+console.log(objData);
+buyerData.push(objData)
+localStorage.setItem("userData", JSON.stringify(buyerData))
+}
 </script>
-</html>
+</html> 
