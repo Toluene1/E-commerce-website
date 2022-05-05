@@ -15,7 +15,7 @@
     />
     <style>
       .cover {
-        height: 340px;
+        height: 350px;
         width: 70%;
         margin: auto;
         margin-top: 30px;
@@ -47,9 +47,13 @@
       }
       .rating {
         height: 40px;
-        width: 50%;
+        width: 40%;
         margin: 10px;
-        /* text-align: center; */
+      }
+      .totalA {
+        height: 40px;
+        width: 40%;
+        margin: 10px;
       }
       .price {
         height: 45%;
@@ -78,7 +82,15 @@
         margin-top: 15px;
         width: 40%;
         height: 50px;
-        margin-left: 120px;
+        /* margin-left: 120px; */
+      }
+      .diva {
+        margin: auto;
+        text-align: center;
+      }
+      .total {
+        display: flex;
+        align-content: center;
       }
     </style>
   </head>
@@ -89,27 +101,40 @@
 <script>
   let getCartDetails = localStorage.getItem("userData");
   let getCartInArray = JSON.parse(getCartDetails);
-  console.log(getCartInArray);
+  //   console.log(getCartInArray);
 
   getCartInArray.map((val, index) => {
     document.getElementById("displayCart").innerHTML += `
-                  <main class="cover">
-  <main class="leftSide">
+ <main class="cover">
+<div class="leftSide">
   <div style= " width: 100% ;"> <img class ="image" src="${val.image}"/> </div>   
-        <div class="title"><h3>Title:  ${val.title}</h3></div>
-        <div class="rating"><h5>Rating: ${val.rating}</h5></div>
-      </main>
-      <main class="rightSide">
+        <div class="title"><h4>Title:  ${val.title}</h4></div>
+    <div class="total">
+    <div class="rating"><h5>Rating: ${val.rating}</h5> </div>
+    <div class="totalA"><h3>Total:</h3> </div>
+</div>     
+   </div>
+      <div class="rightSide">
         <div class="price"><h3>Price: </br> </br> ${val.price}</h3></div>
         <div class="quantity">
           <button class="butt">-</button>
           <h1>${val.quantity}</h1>
           <button class="butt">+</button>
         </div>
-        <button class="remove">Remove</button>
-      </main>
+        <div class="diva"><button class="remove" onclick ="removeCart(event,${index})">Remove</button></div>
+   </div>
 </main>
- 
-                `;
+  `;
   });
+
+  function removeCart(event, index) {
+    event.target.closest("main").remove();
+
+    let getCartDetails = localStorage.getItem("userData");
+    let getCartInArray = JSON.parse(getCartDetails);
+    getCartInArray.splice(index, 1);
+    localStorage.setItem("userData", JSON.stringify(getCartInArray));
+    // store = stringToArray;
+    console.log(getCartInArray);
+  }
 </script>

@@ -133,5 +133,13 @@ document.getElementById("cartNumber").innerText = buyerData.length
 function cartList() {
 window.location.href = "cart.html";
 }
+let getCartDetails = localStorage.getItem("userData");
+let arrayOfBuyerData = JSON.parse(getCartDetails)
+arrayOfBuyerData.map((value) =>{
+buyerData.push(value)
+})
+document.getElementById("cartNumber").innerText = buyerData.length
+
+
 </script>
 </html> 
