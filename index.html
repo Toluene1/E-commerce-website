@@ -18,8 +18,9 @@ color: lightgray;
 padding-left: 20px;
 padding-right: 20px;
 }
-.cartE{
-font: 50px;
+.fa{
+font-size: 30px;
+margin-right: 50px;
 }
 #displayOnScreen{
                 margin: 10px;
@@ -50,18 +51,46 @@ color: lightgray;
 font-weight: bold;
 border-radius: 0px 0px 0px 20px;
 }
+.cartA{
+display: flex;
+}
+.number{
+background-color: lightgrey;
+width: 16px;
+height: 16px;
+border-radius: 50%;
+position: relative;
+top: -7px;
+left: -60px;
+color: darkblue;
+}
+#cartNumber{
+text-align: center;
+margin-top: -5px;
+}
+.buttTop{
+border: none;
+}
   </style>
     </head>
     <body>
-        <div class="nav">
+      <main id="mainDom">
+  <div class="nav">
             <h1> Toluene Store </h1>
 
-            <i class="fa fa-shopping-cart cartE"><span class="">. </span> </i>
+           <div class="cartA">
+    <button class="buttTop" onclick="cartList()"><i class="fa fa-shopping-cart"> </i></button>
+    <div class="number"><p id="cartNumber"><p/></div>
+</div>
 
         </div>
 
         <div id="displayOnScreen">
         </div>
+</main>
+
+<main class="cartDom">
+</main>
 
     </body>
 
@@ -98,6 +127,11 @@ let objData ={quantity:1, title, price, image, rating}
 console.log(objData);
 buyerData.push(objData)
 localStorage.setItem("userData", JSON.stringify(buyerData))
+document.getElementById("cartNumber").innerText = buyerData.length
+}
+
+function cartList() {
+window.location.href = "cart.html";
 }
 </script>
 </html> 
