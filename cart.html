@@ -55,7 +55,7 @@
         width: 40%;
         margin: 10px;
       }
-      .price {
+      .price1 {
         height: 45%;
         width: 50%;
         margin: auto;
@@ -92,16 +92,33 @@
         display: flex;
         align-content: center;
       }
+      .subtotalDis {
+        background-color: darkblue;
+        text-align: center;
+        width: 70%;
+        margin: auto;
+        color: lightgray;
+      }
+.divSub{
+display: flex;
+justify-content: center;
+align-content: center;
+}
     </style>
   </head>
   <body>
     <main id="displayCart"></main>
+    <div class="subtotalDis">
+     <div class="divSub"> <h1 class="subTotalOfPrices">
+        Sub-Total:
+        <h1 id="subTotalOfPrices"></h1></div>
+      </h1>
+    </div>
   </body>
 </html>
 <script>
   let getCartDetails = localStorage.getItem("userData");
   let getCartInArray = JSON.parse(getCartDetails);
-  //   console.log(getCartInArray);
 
   getCartInArray.map((val, index) => {
     document.getElementById("displayCart").innerHTML += `
@@ -111,15 +128,15 @@
         <div class="title"><h4>Title:  ${val.title}</h4></div>
     <div class="total">
     <div class="rating"><h5>Rating: ${val.rating}</h5> </div>
-    <div class="totalA"><h3>Total:</h3> </div>
+    <div class="total"><h3>Total: <h3 class="totalCart"> ${val.price}</h3> </h3> </div>
 </div>     
    </div>
       <div class="rightSide">
-        <div class="price"><h3>Price: </br> </br> ${val.price}</h3></div>
+        <div class="price1"><h3 >Price: </br> </br> <h3 class="price"> ${val.price} </h3> </h3></div>
         <div class="quantity">
-          <button class="butt">-</button>
+          <button class="butt" onclick="minus(event,${index} )">-</button>
           <h1>${val.quantity}</h1>
-          <button class="butt">+</button>
+          <button class="butt" onclick="plus(event,${index})">+</button>
         </div>
         <div class="diva"><button class="remove" onclick ="removeCart(event,${index})">Remove</button></div>
    </div>
@@ -127,14 +144,49 @@
   `;
   });
 
+  let Total = document.getElementsByClassName("totalCart");
+  let subtotal = document.getElementById("subTotalOfPrices");
+  let p = document.getElementsByClassName("price");
+  //   console.log(subtotal.innerText);
+
   function removeCart(event, index) {
     event.target.closest("main").remove();
-
     let getCartDetails = localStorage.getItem("userData");
     let getCartInArray = JSON.parse(getCartDetails);
     getCartInArray.splice(index, 1);
     localStorage.setItem("userData", JSON.stringify(getCartInArray));
-    // store = stringToArray;
     console.log(getCartInArray);
   }
+
+  function plus(event, index) {
+    let qty = event.target.closest("div").children[1].innerHTML;
+    let quantity = Number(qty);
+    event.target.closest("div").children[1].innerHTML = quantity += 1;
+    let price = Number(p[index].innerHTML);
+    console.log(price);
+    Total[index].innerHTML = Math.round(price * quantity * 100) / 100;
+    subtotal.innerHTML =
+      Math.round((Number(subtotal.innerHTML) + price) * 100) / 100;
+    console.log();
+  }
+
+  function minus(event, index) {
+    let qty = event.target.closest("div").children[1].innerHTML;
+    let price = Number(p[index].innerHTML);
+    let quantity = Number(qty);
+
+    if (quantity > 1) {
+      event.target.closest("div").children[1].innerHTML = quantity - 1;
+      Total[index].innerHTML =
+        Math.round((Total[index].innerHTML - price) * 100) / 100;
+      subtotal.innerHTML =
+        Math.round((Number(subtotal.innerHTML) - price) * 100) / 100;
+    }
+  }
+  let sum = 0;
+  for (let index = 0; index < Total.length; index++) {
+    sum = Number(sum) + Number(Total[index].innerHTML);
+    // console.log(Total[index].innerHTML);
+  }
+  subtotal.innerHTML = sum;
 </script>
