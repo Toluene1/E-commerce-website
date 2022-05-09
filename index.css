@@ -1,20 +1,36 @@
 .nav {
   background-color: darkblue;
+height: 85px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   color: lightgray;
   padding-left: 20px;
   padding-right: 20px;
+  position: sticky;
+  top: 0px;
+  z-index: 4000;
+  box-shadow: 5px 5px 5px rgb(163, 153, 153);
+
 }
 .fa {
-  font-size: 30px;
+  font-size: 38px;
   margin-right: 50px;
-color: lightgrey;
+  color: lightgrey;
 }
-.buttTop{
-border: none;
-background-color: darkblue;
+.buttTop {
+  border: none;
+  background-color: darkblue;
+}
+.homeHeader {
+  color: lightgray;
+  width: 30%;
+  background-color: darkblue;
+  margin: auto;
+  text-align: center;
+  box-shadow: 5px 5px 5px rgb(163, 153, 153);
+  margin-top: 10px;
+  border-radius: 0px 0px 0px 20px;
 }
 #displayOnScreen {
   margin: 10px;
@@ -28,7 +44,7 @@ background-color: darkblue;
   margin: 20px;
   width: 250px;
   /* height: 300px; */
-  box-shadow: 3px 3px 3px grey;
+  box-shadow: 4px 4px 4px grey;
 }
 img {
   max-width: 100%;

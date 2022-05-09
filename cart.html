@@ -60,12 +60,14 @@
   //   console.log(subtotal.innerText);
 
   function removeCart(event, index) {
-    event.target.closest("main").remove();
     let getCartDetails = localStorage.getItem("userData");
     let getCartInArray = JSON.parse(getCartDetails);
     getCartInArray.splice(index, 1);
     localStorage.setItem("userData", JSON.stringify(getCartInArray));
     console.log(getCartInArray);
+    subtotal.innerHTML =
+      Math.round((Number(subtotal.innerHTML) - Number(Total[index].innerHTML)) * 100) / 100;
+    event.target.closest("main").remove();
   }
 
   function plus(event, index) {
@@ -77,7 +79,6 @@
     Total[index].innerHTML = Math.round(price * quantity * 100) / 100;
     subtotal.innerHTML =
       Math.round((Number(subtotal.innerHTML) + price) * 100) / 100;
-    console.log();
   }
 
   function minus(event, index) {

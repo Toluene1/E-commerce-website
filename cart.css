@@ -8,7 +8,7 @@
   justify-content: center;
   flex-wrap: wrap;
   border-radius: 20px;
-  box-shadow: 3px 3px 3px grey;
+  box-shadow: 4px 4px 4px grey;
 }
 .leftSide {
   height: 330px;
@@ -97,6 +97,10 @@
   color: lightgray;
   border-radius: 0px 0px 0px 20px;
   font-weight: bolder;
+transition: 0.4s;
+}
+.buttonDesign:hover {
+  box-shadow: 5px 5px 5px rgb(163, 153, 153);
 }
 .cartHeader {
   color: lightgray;
