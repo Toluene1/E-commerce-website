@@ -1,0 +1,124 @@
+.cover {
+  height: 350px;
+  width: 70%;
+  margin: auto;
+  margin-top: 30px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  box-shadow: 3px 3px 3px grey;
+}
+.leftSide {
+  height: 330px;
+  width: 60%;
+  margin: auto;
+}
+.rightSide {
+  height: 330px;
+  width: 30%;
+  margin: auto;
+}
+.image {
+  width: 30%;
+  height: 170px;
+  margin: 10px;
+}
+.title {
+  height: 80px;
+  width: 80%;
+  margin: 10px;
+}
+.rating {
+  height: 40px;
+  width: 40%;
+  margin: 10px;
+  margin-top: -5px;
+}
+.totalA {
+  height: 40px;
+  width: 40%;
+  margin: 10px;
+}
+.price1 {
+  height: 45%;
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+  padding-top: 20px;
+  text-align: center;
+}
+.quantity {
+  height: 25%;
+  width: 80%;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.butt {
+  width: 60px;
+  height: 60px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.remove {
+  margin-top: 15px;
+  width: 40%;
+  height: 50px;
+  /* margin-left: 120px; */
+}
+.diva {
+  margin: auto;
+  text-align: center;
+}
+.total {
+  display: flex;
+  align-content: center;
+}
+.subtotalDis {
+  background-color: darkblue;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  color: lightgray;
+  border-radius: 0px 0px 0px 20px;
+  box-shadow: 5px 5px 5px rgb(163, 153, 153);
+}
+.divSub {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.buttonDesign {
+  background-color: darkblue;
+  color: lightgray;
+  border-radius: 0px 0px 0px 20px;
+  font-weight: bolder;
+}
+.cartHeader {
+  color: lightgray;
+  width: 30%;
+  background-color: darkblue;
+  margin: auto;
+  text-align: center;
+  box-shadow: 5px 5px 5px rgb(163, 153, 153);
+  margin-top: 10px;
+  border-radius: 0px 0px 0px 20px;
+}
+.cartTotal {
+  color: lightgray;
+  width: 30%;
+  background-color: darkblue;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0px 0px 0px 20px;
+  height: 45px;
+  margin-top: -10px;
+  padding: 5px;
+  box-shadow: 5px 5px 5px rgb(163, 153, 153);
+}

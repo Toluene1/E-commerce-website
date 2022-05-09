@@ -8,70 +8,7 @@
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Toluene Store</title>
-   <style>
-    .nav{
-background-color: darkblue;
-display: flex;
-align-items: center;
-justify-content: space-between;
-color: lightgray;
-padding-left: 20px;
-padding-right: 20px;
-}
-.fa{
-font-size: 30px;
-margin-right: 50px;
-}
-#displayOnScreen{
-                margin: 10px;
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-}
-.itemContainer{
-   color: grey;
-                padding: 20px;
-                margin: 20px;
-                width: 250px;
-                /* height: 300px; */
-                box-shadow: 0px 0px 3px grey;
-}
-img{
-max-width: 100%;
-                width: auto;
-                height: 100px;
-}
-h3{
-font-size: 19px;
-height: 85px;
-}
-button{
-background-color: darkblue;
-color: lightgray;
-font-weight: bold;
-border-radius: 0px 0px 0px 20px;
-}
-.cartA{
-display: flex;
-}
-.number{
-background-color: lightgrey;
-width: 16px;
-height: 16px;
-border-radius: 50%;
-position: relative;
-top: -7px;
-left: -60px;
-color: darkblue;
-}
-#cartNumber{
-text-align: center;
-margin-top: -5px;
-}
-.buttTop{
-border: none;
-}
-  </style>
+   <link rel="stylesheet" href="index.css">
     </head>
     <body>
       <main id="mainDom">
@@ -111,7 +48,7 @@ fetch("./store.json")
                  <h3> ${val.title}</h3>
                  <div style= " width: 100% ;"> <img src= ${val.image}  />  </div>   
                 <h5> <span> Price: </span>  ${val.price} $</h5>
-                <button onclick="addToCart(${index})" class="butt"> Add To Cart </button>
+                <button onclick="addToCart(${index})" class="buttonAdd"> Add To Cart </button>
             </div >
                 `
             })

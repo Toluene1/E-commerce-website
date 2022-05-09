@@ -1,0 +1,71 @@
+.nav {
+  background-color: darkblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: lightgray;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.fa {
+  font-size: 30px;
+  margin-right: 50px;
+color: lightgrey;
+}
+.buttTop{
+border: none;
+background-color: darkblue;
+}
+#displayOnScreen {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.itemContainer {
+  color: grey;
+  padding: 20px;
+  margin: 20px;
+  width: 250px;
+  /* height: 300px; */
+  box-shadow: 3px 3px 3px grey;
+}
+img {
+  max-width: 100%;
+  width: auto;
+  height: 100px;
+}
+h3 {
+  font-size: 19px;
+  height: 85px;
+}
+.buttonAdd {
+  background-color: darkblue;
+  color: lightgray;
+  font-weight: bold;
+  border-radius: 0px 0px 0px 20px;
+  transition: 0.4s;
+}
+.buttonAdd:hover {
+  box-shadow: 5px 5px 5px rgb(163, 153, 153);
+}
+.cartA {
+  display: flex;
+}
+.number {
+  background-color: lightgrey;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: relative;
+  top: -7px;
+  left: -60px;
+  color: darkblue;
+}
+#cartNumber {
+  text-align: center;
+  margin-top: -5px;
+}
+.buttTop {
+  border: none;
+}
