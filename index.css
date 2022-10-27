@@ -1,6 +1,6 @@
 .nav {
   background-color: darkblue;
-height: 85px;
+  height: 85px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -13,15 +13,27 @@ height: 85px;
   box-shadow: 5px 5px 5px rgb(163, 153, 153);
 
 }
+
+.cartA {
+  display: flex;
+}
+
 .fa {
   font-size: 38px;
   margin-right: 50px;
   color: lightgrey;
 }
+
 .buttTop {
   border: none;
   background-color: darkblue;
 }
+
+#cartNumber {
+  text-align: center;
+  margin-top: -5px;
+}
+
 .homeHeader {
   color: lightgray;
   width: 30%;
@@ -32,12 +44,14 @@ height: 85px;
   margin-top: 10px;
   border-radius: 0px 0px 0px 20px;
 }
+
 #displayOnScreen {
   margin: 10px;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   flex-wrap: wrap;
 }
+
 .itemContainer {
   color: grey;
   padding: 20px;
@@ -46,28 +60,31 @@ height: 85px;
   /* height: 300px; */
   box-shadow: 4px 4px 4px grey;
 }
+
 img {
   max-width: 100%;
   width: auto;
   height: 100px;
 }
+
 h3 {
   font-size: 19px;
   height: 85px;
 }
+
 .buttonAdd {
   background-color: darkblue;
   color: lightgray;
   font-weight: bold;
   border-radius: 0px 0px 0px 20px;
-  transition: 0.4s;
+  transition: 0.3s;
 }
+
 .buttonAdd:hover {
   box-shadow: 5px 5px 5px rgb(163, 153, 153);
 }
-.cartA {
-  display: flex;
-}
+
+
 .number {
   background-color: lightgrey;
   width: 16px;
@@ -78,10 +95,8 @@ h3 {
   left: -60px;
   color: darkblue;
 }
-#cartNumber {
-  text-align: center;
-  margin-top: -5px;
-}
+
+
 .buttTop {
   border: none;
 }
